@@ -48,6 +48,11 @@ export default function MainContainer ()  {
   }
 
   return (
+    <body>
+    <header>
+      <h1>掲示板</h1>
+    </header>
+    <div>
     <React.Fragment>
       <Container component='main' maxWidth='xs'>
         <CssBaseline/>
@@ -74,7 +79,7 @@ export default function MainContainer ()  {
             <ListItem key={item.id} component='li' >
               <ListItemText>
                 ID:{item.id}
-                Name:{item.content}
+                Content:{item.content}
                 Time:{item.created_at}
               </ListItemText>
             </ListItem>
@@ -82,5 +87,10 @@ export default function MainContainer ()  {
         </List>
       </Container>
     </React.Fragment>
+    </div>
+    <footer>
+        Horizon
+      </footer>
+    </body>
   );
 }
