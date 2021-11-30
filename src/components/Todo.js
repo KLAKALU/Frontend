@@ -18,7 +18,7 @@ export default function MainContainer ()  {
 
   const createIssue = (event) => {
     console.log("イベント発火")
-    axios.post('http://localhost:3001/sured',
+    axios.post('https://thawing-wildwood-48291.herokuapp.com/sured',
       {
         content: createissue
       }
@@ -35,7 +35,7 @@ export default function MainContainer ()  {
 
   useEffect(()  =>  {
     async function fetchData()  {
-      const result = await axios.get('http://localhost:3001/sured',)
+      const result = await axios.get('https://thawing-wildwood-48291.herokuapp.com/sured',)
         console.log(result)
         console.log(result.data)
         setIssues(result.data);
@@ -73,7 +73,7 @@ export default function MainContainer ()  {
           {issues.map(item => (
             <ListItem key={item.id} component='li' >
               <ListItemText>
-                ID:[{item.id}]
+                ID:{item.id}
                 Name:{item.content}
                 Time:{item.created_at}
               </ListItemText>
